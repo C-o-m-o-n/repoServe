@@ -17,7 +17,7 @@ export default function ClientPage() {
         return(
             <div>
                 <h1>Client</h1>
-                <p>You are successfully signedin to the client page</p>
+                <p>You are successfully signedin to the client page as {session.user.name}</p>
                 <button onClick={() => signOut()}>Sign out</button>
             </div>
         )
