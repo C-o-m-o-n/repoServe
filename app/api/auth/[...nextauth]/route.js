@@ -8,4 +8,4 @@ import { options } from './options'
 
 const Handler = nextAuth(options)
 
-export {Handler as Get, Handler  as Post}
+export {Handler as GET, Handler  as POST}

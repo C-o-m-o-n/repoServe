@@ -1,15 +1,20 @@
+import { getServerSession } from 'next-auth'
 import Image from 'next/image'
+import { options } from './api/auth/[...nextauth]/options'
+import UserCard from './components/UserCard'
 
-export default function Home() {
+export default async function Home() {
+  const sessions = await getServerSession(options)
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <p>Welcome to the gitbox home page</p>
-      <p>
-      This is the idea:
-To allow github devs to save some repos that they may have come across and are interested in but didn't have the time to check them out so that they might check them later.
-I'll really appreciate it if you do.
-Thanks 
-      </p>
-    </main>
+    <>
+    {sessions ? (
+      <UserCard user={sessions.user} pageType={"Home"} />
+      
+    ) : (
+      <h1>You shall not pass</h1>
+    )}
+
+    </>
   )
 }
