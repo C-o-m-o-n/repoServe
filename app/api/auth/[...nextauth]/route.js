@@ -6,6 +6,6 @@ import { options } from './options'
 // import Google from 'next-auth/providers/google'
 
 
-const Handler = nextAuth(options)
+const handler = nextAuth(options)
 
-export {Handler as GET, Handler  as POST}
+export {handler as GET, handler  as POST}

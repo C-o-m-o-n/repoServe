@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation'
 import UserCard from '../components/UserCard'
 
 export default function ClientPage() {
-    const { data: session } = useSession({
+    const { data } = useSession({
         required: true,
         onUnauthenticated() {
             redirect('/api/auth/signin?callbackUrl=/client')
@@ -15,7 +15,7 @@ export default function ClientPage() {
 
     return (
         <section className="flex flex-col gap-6">
-            <UserCard user={session?.user} pagetype={"Client"} />
+            <UserCard  />
         </section>
     )
 }
