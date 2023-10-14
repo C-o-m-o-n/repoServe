@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <>
     {sessions ? (
-      <UserCard user={sessions.user} pageType={"Home"} />
+      <UserCard />
       
     ) : (
       <h1>You shall not pass</h1>
