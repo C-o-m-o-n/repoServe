@@ -4,7 +4,11 @@
 <div class="row">
 	<div>
 		<h4 class="text-center">Welcome {{ user.username }}</h4>
+		<h5 class="text-center">You are logged in as {{ user.role }}</h5>
+		<img src="{{ user.image }}" class="img-responsive img-circle center-block" alt="User Image">
 	</div>
 </div>
+<a href="{% url "all-users" %}">see all user</a>
+<p>{{user}}</p>
 {% endblock %}
 

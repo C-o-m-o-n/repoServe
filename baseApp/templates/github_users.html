@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+<div class="card p-5">
+	{% for repository_detail in repository_details  %}
+	<p>{{repository_detail}}</p>
+	{% endfor %}
+</div>
