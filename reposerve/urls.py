@@ -21,7 +21,8 @@ from baseApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('social-auth/', include('social_django.urls', namespace='social')),
-    path('', views.home, name='home'),
+    path('', include("baseApp.urls")),
+    
 
     # Login and Logout
     path('login/', auth_views.LoginView.as_view(), name='login'),
